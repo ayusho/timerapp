@@ -9,6 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../build')));
 
 let questions;
 let previousResponse;
@@ -30,6 +31,10 @@ app.post("/convert", (req, res) => {
   previousResponse = setTimeout(() => {
     res.download(path.join(__dirname, "files/output.pdf"));
   }, 1000);
+});
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname,'../', 'build', 'index.html'));
 });
 
 app.listen(8082, () => {
