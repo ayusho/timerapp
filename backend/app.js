@@ -37,6 +37,7 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname,'../', 'build', 'index.html'));
 });
 
-app.listen(8082, () => {
+let port = process.env.PORT || 8082;
+app.listen(port, () => {
   console.log("Running...!");
 });
