@@ -23,7 +23,7 @@
   "proxy": "http://localhost:8082",
   "scripts": {
     "client": "react-scripts start",
-    "server": "nodemon backend/app.js",
+    "server": "node backend/app.js",
     "start": "concurrently --kill-others-on-fail 'yarn run server' 'yarn run client'",
     "build": "react-scripts build",
     "test": "react-scripts test",
