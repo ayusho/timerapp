@@ -41,7 +41,7 @@ class Home extends React.Component {
             console.log("calling backend api");
             clearInterval(this.myInterval);
             console.log(questions);
-            let res = await fetch(`http://localhost:8082/convert`, {
+            let res = await fetch(`https://doubtnut-app.herokuapp.com/convert`, {
               method: "post",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(questions),
